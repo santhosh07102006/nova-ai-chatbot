@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nova AI Chatbot</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/chat.js" defer></script>
+</head>
+<body>
+    <main class="chat-app">
+        <header class="chat-header">
+            <div class="chat-header-top">
+                <div>
+                    <p class="brand-name">Nova AI</p>
+                    <h1>Nova AI Chatbot</h1>
+                </div>
+                <button id="new-chat-button" class="new-chat-button" type="button">
+                    New chat
+                </button>
+            </div>
+            <p>Ask a question to start a conversation.</p>
+        </header>
+
+        <section
+            id="chat-history"
+            class="chat-history"
+            aria-label="Conversation"
+            aria-live="polite"
+        >
+            <div id="empty-state" class="empty-state">
+                <h2>Welcome</h2>
+                <p>Your conversation will appear here.</p>
+            </div>
+        </section>
+
+        <p id="loading-indicator" class="loading-indicator" role="status" aria-live="polite" hidden>
+            Nova is thinking...
+        </p>
+        <p id="error-message" class="error-message" role="alert" hidden></p>
+
+        <form id="chat-form" class="chat-form">
+            <label for="message-input">Your message</label>
+            <textarea
+                id="message-input"
+                name="message"
+                rows="3"
+                placeholder="Write a message..."
+                maxlength="4000"
+                required
+            ></textarea>
+            <button id="send-button" type="submit" disabled>Send</button>
+        </form>
+
+        <footer class="chat-footer">
+            <p>AI responses can be inaccurate. Check important information.</p>
+        </footer>
+    </main>
+</body>
+</html>
